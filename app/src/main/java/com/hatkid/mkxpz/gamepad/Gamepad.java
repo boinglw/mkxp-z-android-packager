@@ -46,14 +46,9 @@ public class Gamepad
     // Gamepad buttons
     private GamepadButton gpadBtnA;
     private GamepadButton gpadBtnB;
-    private GamepadButton gpadBtnC;
-    private GamepadButton gpadBtnX;
-    private GamepadButton gpadBtnY;
-    private GamepadButton gpadBtnZ;
     private GamepadButton gpadBtnL;
     private GamepadButton gpadBtnR;
     private GamepadButton gpadBtnCTRL;
-    private GamepadButton gpadBtnALT;
     private GamepadButton gpadBtnSHIFT;
 
     public void init(GamepadConfig gpadConfig, boolean invisible)
@@ -78,14 +73,9 @@ public class Gamepad
         GamepadDPad gpadDPad = layout.findViewById(R.id.dpad);
         gpadBtnA = layout.findViewById(R.id.button_A);
         gpadBtnB = layout.findViewById(R.id.button_B);
-        gpadBtnC = layout.findViewById(R.id.button_C);
-        gpadBtnX = layout.findViewById(R.id.button_X);
-        gpadBtnY = layout.findViewById(R.id.button_Y);
-        gpadBtnZ = layout.findViewById(R.id.button_Z);
         gpadBtnL = layout.findViewById(R.id.button_L);
         gpadBtnR = layout.findViewById(R.id.button_R);
         gpadBtnCTRL = layout.findViewById(R.id.button_CTRL);
-        gpadBtnALT = layout.findViewById(R.id.button_ALT);
         gpadBtnSHIFT = layout.findViewById(R.id.button_SHIFT);
 
         // Setup in-screen gamepad listeners
@@ -146,14 +136,9 @@ public class Gamepad
     {
         setGamepadButtonKey(gpadBtnA, mGamepadConfig.keycodeA);
         setGamepadButtonKey(gpadBtnB, mGamepadConfig.keycodeB);
-        setGamepadButtonKey(gpadBtnC, mGamepadConfig.keycodeC);
-        setGamepadButtonKey(gpadBtnX, mGamepadConfig.keycodeX);
-        setGamepadButtonKey(gpadBtnY, mGamepadConfig.keycodeY);
-        setGamepadButtonKey(gpadBtnZ, mGamepadConfig.keycodeZ);
         setGamepadButtonKey(gpadBtnL, mGamepadConfig.keycodeL);
         setGamepadButtonKey(gpadBtnR, mGamepadConfig.keycodeR);
         setGamepadButtonKey(gpadBtnCTRL, mGamepadConfig.keycodeCTRL);
-        setGamepadButtonKey(gpadBtnALT, mGamepadConfig.keycodeALT);
         setGamepadButtonKey(gpadBtnSHIFT, mGamepadConfig.keycodeSHIFT);
     }
 
