@@ -50,6 +50,10 @@ public class Gamepad
     private GamepadButton gpadBtnR;
     private GamepadButton gpadBtnCTRL;
     private GamepadButton gpadBtnSHIFT;
+    private GamepadButton gpadBtnENTER;
+    private GamepadButton gpadBtnF2;
+    private GamepadButton gpadBtnF8;
+    private GamepadButton gpadBtnESC;
 
     public void init(GamepadConfig gpadConfig, boolean invisible)
     {
@@ -77,6 +81,10 @@ public class Gamepad
         gpadBtnR = layout.findViewById(R.id.button_R);
         gpadBtnCTRL = layout.findViewById(R.id.button_CTRL);
         gpadBtnSHIFT = layout.findViewById(R.id.button_SHIFT);
+        gpadBtnENTER = layout.findViewById(R.id.button_ENTER);
+        gpadBtnF2 = layout.findViewById(R.id.button_F2);
+        gpadBtnF8 = layout.findViewById(R.id.button_F8);
+        gpadBtnESC = layout.findViewById(R.id.button_ESC);
 
         // Setup in-screen gamepad listeners
         mGamepadLayout.setOnTouchListener((view, motionEvent) -> false);
@@ -140,6 +148,10 @@ public class Gamepad
         setGamepadButtonKey(gpadBtnR, mGamepadConfig.keycodeR);
         setGamepadButtonKey(gpadBtnCTRL, mGamepadConfig.keycodeCTRL);
         setGamepadButtonKey(gpadBtnSHIFT, mGamepadConfig.keycodeSHIFT);
+        setGamepadButtonKey(gpadBtnENTER, mGamepadConfig.keycodeENTER);
+        setGamepadButtonKey(gpadBtnF2, mGamepadConfig.keycodeF2);
+        setGamepadButtonKey(gpadBtnF8, mGamepadConfig.keycodeF8);
+        setGamepadButtonKey(gpadBtnESC, mGamepadConfig.keycodeESC);
     }
 
     public boolean processGamepadEvent(KeyEvent evt)
