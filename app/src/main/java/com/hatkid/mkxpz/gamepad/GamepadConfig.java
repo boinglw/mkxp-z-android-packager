@@ -27,4 +27,8 @@ public class GamepadConfig
     public final Integer keycodeCTRL = KeyEvent.KEYCODE_CTRL_LEFT;
     public final Integer keycodeALT = KeyEvent.KEYCODE_ALT_LEFT;
     public final Integer keycodeSHIFT = KeyEvent.KEYCODE_SHIFT_LEFT;
+    public final Integer keycodeENTER = KeyEvent.KEYCODE_ENTER;
+    public final Integer keycodeF2 = KeyEvent.KEYCODE_F2;
+    public final Integer keycodeF8 = KeyEvent.KEYCODE_F8;
+    public final Integer keycodeESC = KeyEvent.KEYCODE_ESCAPE;
 }
