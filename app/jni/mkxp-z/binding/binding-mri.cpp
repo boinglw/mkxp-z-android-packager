@@ -62,6 +62,7 @@ extern "C" {
 #include <SDL_filesystem.h>
 #include <SDL_loadso.h>
 #include <SDL_power.h>
+#include <SDL_misc.h>
 
 extern const char module_rpg1[];
 extern const char module_rpg2[];
@@ -648,6 +649,14 @@ RB_METHOD(mkxpLaunch) {
     
     rb_scan_args(argc, argv, "11", &cmdname, &args);
     SafeStringValue(cmdname);
+
+#ifdef __ANDROID__
+    /* Android has no xdg-open/start: ask SDL to open the URL via an Intent. */
+    if (SDL_OpenURL(RSTRING_PTR(cmdname)) != 0) {
+        raiseRbExc(Exception(Exception::MKXPError, "Failed to launch \"%s\"", RSTRING_PTR(cmdname)));
+    }
+    return RUBY_Qnil;
+#endif
     
     std::string command(OPENCMD);
     command += "\""; command += RSTRING_PTR(cmdname); command += "\"";
