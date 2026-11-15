@@ -100,6 +100,8 @@ jobs:
       - name: Compile native deps — armeabi-v7a (32-bit)
         working-directory: app/jni
         run: |
+          # Las dependencias se compilan dentro de las mismas carpetas fuente: limpiar el estado de 64 bits
+          make clean || true
           HOST=armv7a-linux-androideabi \
           TARGET=arm-linux-androideabi \
           ABI=armeabi-v7a \
