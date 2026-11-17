@@ -1196,11 +1196,13 @@ void Bitmap::clear()
     
     p->bindFBO();
     
+    glState.scissorTest.pushSet(false);
     glState.clearColor.pushSet(Vec4());
     
     FBO::clear();
     
     glState.clearColor.pop();
+    glState.scissorTest.pop();
     
     p->clearTaintedArea();
     
@@ -1615,7 +1617,7 @@ void Bitmap::drawText(const IntRect &rect, const char *str, int align)
     Vec2i gpTexSize;
     shState->ensureTexSize(txtSurf->w, txtSurf->h, gpTexSize);
     
-    bool fastBlit = !p->touchesTaintedArea(posRect) && txtAlpha == 1.0f;
+    bool fastBlit = false;
     
     if (fastBlit)
     {
